@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <title>Martin Krajíček | Odpověď pro Ovečkárnu 🐑</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Martin Krajíček">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* Typography Overrides */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    /* Hero */
+    .hero-section {
+      padding: 120px 0 100px;
+      /* background-color: #f0f4f8; */
+      background: linear-gradient(135deg, #fdfbf7 0%, #f4f7f6 100%);
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Chat/Dialog Aesthetics */
+    .ad-box {
+      background-color: #fff;
+      border-left: 5px solid #bdc3c7;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+      border-radius: 4px;
+      height: 100%;
+    }
+
+    .ad-box h2 {
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+
+    .ad-box p {
+      font-style: italic;
+      color: #666;
+    }
+
+    .response-box {
+      background-color: #fff;
+      /* Border color will match the "Ovečkárna Green" or Success */
+      border-left: 5px solid #198754;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 992px) {
+      .response-box {
+        margin-top: 0;
+        margin-left: -20px;
+        /* Overlap effect */
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    .response-header {
+      color: #198754;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    /* Skills & Tech Stack */
+    .skill-badge {
+      font-size: 0.9em;
+    }
+
+    /* Reveal Button */
+    .btn-reveal {
+      border-width: 2px;
+      font-weight: 600;
+    }
+
+    .hidden-content {
+      background-color: #f9fbfd;
+      border-radius: 8px;
+      padding: 25px;
+      margin-top: 20px;
+      border: 1px solid #eef2f5;
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+  <!-- Header -->
+  <header class="fixed-top bg-white border-bottom shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+      <div class="logo fw-bold fs-4 d-flex align-items-center gap-2">
+        <img src="images/oveckarna_logo.png" alt="Ovečkárna" height="30">
+        <span>&times; Martin Krajíček</span>
+      </div>
+      <nav class="d-none d-md-flex gap-3">
+        <a href="#mission" class="btn btn-link text-decoration-none text-dark fw-medium">Poslání</a>
+        <a href="#projects" class="btn btn-link text-decoration-none text-dark fw-medium">Projekty</a>
+        <a href="#knowledge" class="btn btn-link text-decoration-none text-dark fw-medium">Znalosti</a>
+        <a href="#profile" class="btn btn-link text-decoration-none text-dark fw-medium">Profil</a>
+        <a href="#contact" class="btn btn-outline-success rounded-pill px-4 fw-bold">Kontakt</a>
+      </nav>
+      <!-- Mobile Menu Toggle (simplified) -->
+      <button class="btn btn-outline-dark d-md-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#mobileMenu">☰</button>
+    </div>
+    <div class="collapse bg-white border-bottom p-3 d-md-none" id="mobileMenu">
+      <a href="#mission" class="d-block py-2 text-decoration-none text-dark">Poslání</a>
+      <a href="#projects" class="d-block py-2 text-decoration-none text-dark">Projekty</a>
+      <a href="#knowledge" class="d-block py-2 text-decoration-none text-dark">Znalosti</a>
+      <a href="#profile" class="d-block py-2 text-decoration-none text-dark">Profil</a>
+      <a href="#contact" class="d-block py-2 text-decoration-none text-success fw-bold">Kontakt</a>
+    </div>
+  </header>
+
+  <!-- Hero Section (Úvodní sekce) -->
+  <section id="hero" class="hero-section text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- Visuals -->
+          <div class="mb-4 d-flex justify-content-center align-items-center gap-4">
+            <img src="images/Profil photo.jpg" class="rounded-circle shadow"
+              style="width: 140px; height: 140px; object-fit: cover; border: 4px solid #fff;" alt="Martin Krajíček">
+            <span class="fs-2 text-muted">+</span>
+            <img src="images/oveckarna_logo.png" style="height: 80px;" alt="Ovečkárna Logo">
+          </div>
+
+          <p class="text-uppercase letter-spacing-2 text-muted fw-bold mb-2">Postav s námi technologické srdce Ovečkárny
+            🐑</p>
+          <h1 class="display-3 fw-black text-dark mb-4">...Dám Ovečkárně to svoje.</h1>
+
+          <div class="row justify-content-center">
+            <div class="col-md-10 fs-5 text-secondary">
+              <p class="fst-italic mb-4">"V Ovečkárně věříme, že poctivá tradice a moderní technologie mohou fungovat
+                ruku v ruce..."</p>
+              <p class="fw-bold text-dark">To si myslím taky.
+                Dokonce jsem přesvědčen, že dnes – v době nastupující AI – je tradice ve spojení s technologiemi jediná
+                správná cesta, jak neztratit duši. Získáváte mou pozornost, protože nejsem akademik, ale praktik.</p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary rounded-pill px-5 py-3 mt-4 btn-lg shadow-sm" type="button"
+            data-bs-toggle="collapse" data-bs-target="#heroDetail">
+            ➕ Číst více: Můj příběh o růstu
+          </button>
+
+          <div class="collapse justify-content-center mt-4" id="heroDetail">
+            <div class="col-md-10 col-lg-8 mx-auto text-start bg-white p-5 rounded shadow-sm border">
+              <p>Vše, co v IT umím, jsem se naučil sám hodinami proseděnými nad systémem pokus/omyl. Nikdo mi neříkal,
+                co mám dělat, cestu k úspěchu jsem si musel prošlapat.</p>
+              <p>V minulé firmě (Coleman S.I.) jsem za 8 let nechal vyrůst e-commerce divizi raketově, přesto krok za
+                krokem. Představte si to tak, že <strong>celková hodnota tržeb za rok 2015 (kdy jsem e-shop přebíral)
+                  byla ve stejné nominální hodnotě jako marže za jeden měsíc v roce 2019.</strong> O rok později už to
+                byl dvojnásobek.</p>
+              <p>Z malého e-shopu, který byl pro pobočky spíše "otravnou přítěží", jsem vybudoval kanál, který si získal
+                respekt celé firmy. Vím, co znamená růst – ne tabulkově, ale reálně.</p>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <a href="#mission" class="text-muted text-decoration-none fs-6">↓ Scrollovat na reakci na inzerát</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Poslání (Mission) + SKILLS -->
+  <section id="mission" class="section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <!-- Ad Side -->
+        <div class="col-lg-5 mb-4">
+          <div class="ad-box">
+            <h2>🐑 Co bude tvým posláním:</h2>
+            <p>Řídit IT a e-commerce projekty...</p>
+            <p>Propojovat techniku, byznys, marketing a logistiku...</p>
+            <p>Jít do technického detailu...</p>
+          </div>
+        </div>
+        <!-- Response Side -->
+        <div class="col-lg-7">
+          <div class="response-box">
+            <h2 class="response-header">Všechno z toho už jsem dělal. A rád.</h2>
+            <p class="lead">Hledáte někoho, kdo se vyzná v IT, umí řídit projekty a nebojí se přijít s vlastním návrhem?
+              Jeden takový "universe" už jsem z nuly vytvořil.</p>
+            <p>Pro firmu se střešními krytinami jsem vybudoval plnohodnotné e-commerce oddělení srovnatelné s pobočkami.
+            </p>
+
+            <button class="btn btn-outline-success btn-reveal rounded-pill mt-3 w-100" type="button"
+              data-bs-toggle="collapse" data-bs-target="#missionDetail">
+              ➕ Zobrazit detail: Jak jsem stavěl IT vesmír
+            </button>
+
+            <div class="collapse hidden-content" id="missionDetail">
+              <p>Sedím s rukama složenýma a u bodů vaší náplně práce se usmívám. Pod těmi obecnými frázemi vidím
+                konkrétní úkoly. V hlavě se mi tvoří pavouk od strategie až po každodenní agendu.</p>
+              <h5 class="fw-bold mt-4">Můj přístup k řízení:</h5>
+              <ul class="list-unstyled mt-3">
+                <li class="mb-3"><strong>🚀 Vlastní iniciativa:</strong> Všechny projekty v minulé firmě byly mé vlastní
+                  návrhy. Například majitel chtěl jen "kalkulačku střech". Já viděl dál. I když technici říkali, že to
+                  nejde, navrhl jsem a dotáhl “Konfigurátor střech” (e.coleman.cz/konfigurator) - který ze základních
+                  rozměrů spočítá střechu do posledního šroubku (400+ sestav). Tehdy nebylo AI, musel jsem vymyslet
+                  logiku a navzorcovat to.</li>
+                <li class="mb-3"><strong>🏗️ Rozšíření a nástavby:</strong> Dalším revolučním projektem byl ColMACHR
+                  (coleman.cz/colmachr) který změnil přístup řemeslníků k rozpočtování a vůběc řízení celé společnosti.
+                </li>
+                <li class="mb-3"><strong>🧩 Komplexita:</strong> Vybudoval jsem to oddělení krok za krokem. Když jsem
+                  odcházel, musel jsem rok externě zaškolovat kolegu, protože jsem byl jediný, kdo znal ten systém "pod
+                  kapotou" jako celek.</li>
+                <li class="mb-3"><strong>🤝 Byznys vs. Tech:</strong> Přišel jsem z prostředí hotelnictví (Booking.com),
+                  takže jsem přinesl "Booking pro střechy". Umím mluvit řečí obchodu i řečí vývojářů.</li>
+              </ul>
+            </div>
+
+            <!-- SKILLS INTEGRATION (Request from readme.txt) -->
+            <div class="mt-5 border-top pt-4">
+              <h4 class="text-success mb-4">Moje klíčové dovednosti pro tuto roli:</h4>
+              <div class="row g-3">
+                <!-- Top 3 Static Cards that toggle the modal/collapse -->
+                <div class="col-md-4">
+                  <div class="p-3 border rounded text-center bg-light h-100 pointer"
+                    onclick="document.getElementById('btnShowSkills').click()">
+                    <div class="display-6 mb-2">🚀</div>
+                    <div class="fw-bold small">Projektové řízení & Strategie</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="p-3 border rounded text-center bg-light h-100 pointer"
+                    onclick="document.getElementById('btnShowSkills').click()">
+                    <div class="display-6 mb-2">📈</div>
+                    <div class="fw-bold small">E-commerce & Growth</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="p-3 border rounded text-center bg-light h-100 pointer"
+                    onclick="document.getElementById('btnShowSkills').click()">
+                    <div class="display-6 mb-2">🏭</div>
+                    <div class="fw-bold small">ERP & Systémy</div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <button class="btn btn-dark w-100" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#allSkillsContainer" id="btnShowSkills">
+                  📂 Zobrazit kompletní přehled dovedností
+                </button>
+              </div>
+
+              <!-- Full Dynamic Skills List -->
+              <div class="collapse mt-3" id="allSkillsContainer">
+                <div class="card card-body bg-white border shadow-sm" id="full-skills-list">
+                  <!-- JS will populate -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Projekty (Projects) -->
+  <section id="projects" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <!-- Ad Side -->
+        <div class="col-lg-4 mb-4">
+          <div class="ad-box">
+            <h2>🧭 Projekty, na kterých se budeš podílet</h2>
+            <p>Máme jasnou technologickou roadmapu...</p>
+            <ul class="text-secondary fst-italic ps-3">
+              <li>Rozvoj Luigi’s Boxu</li>
+              <li>AI agenti a automatizace</li>
+              <li>Migrace na Shopify & ERP</li>
+              <li>Průběžné zlepšování integrací</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Response Side -->
+        <div class="col-lg-8">
+          <div class="response-box">
+            <h2 class="response-header">...a já netrpělivě čtu body a uvažuju, zda mám tu zkušenost. Mám.</h2>
+
+            <!-- Accordion for Projects -->
+            <div class="accordion accordion-flush" id="projectsAccordion">
+
+              <!-- P1 -->
+              <div class="accordion-item mb-4 border rounded shadow-sm">
+                <div class="p-4 bg-white border-bottom">
+                  <h5 class="fw-bold mb-2 text-dark">🔍 1. Rozvoj Luigi’s Boxu (vyhledávání, data)</h5>
+                  <p class="mb-3">Pracoval jsem už v aplikaci Search Ready. Podílel jsem se na jejím vývoji z pohledu
+                    náročného zákazníka – integrovali moje požadavky a dál je prodávali jako službu.</p>
+                  <button class="btn btn-sm btn-outline-primary rounded-pill fw-bold" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#proj1">
+                    ➕ Zobrazit detail
+                  </button>
+                </div>
+                <div id="proj1" class="accordion-collapse collapse" data-bs-parent="#projectsAccordion">
+                  <div class="accordion-body bg-light">
+                    <p>Ve zkratce: Luigi's Box a logiku vyhledávání/doporučování ovládnu na 100 %. Vím, jak to funguje
+                      uvnitř, nejen jak se to ovládá zvenku.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- P2 -->
+              <div class="accordion-item mb-4 border rounded shadow-sm">
+                <div class="p-4 bg-white border-bottom">
+                  <h5 class="fw-bold mb-2 text-dark">🤖 2. Rozvoj AI agentů a automatizací</h5>
+                  <p class="mb-3">Tohle je moje vášeň. Řadím se do 1 % populace, která ví, jak AI skutečně funguje pod
+                    kapotou, nejen jak napsat prompt do ChatGPT.</p>
+                  <button class="btn btn-sm btn-outline-primary rounded-pill fw-bold" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#proj2">
+                    ➕ Zobrazit detail
+                  </button>
+                </div>
+
+                <div id="proj2" class="accordion-collapse collapse" data-bs-parent="#projectsAccordion">
+                  <div class="accordion-body bg-light">
+                    <h6 class="mt-2 fw-bold">Automatizace:</h6>
+                    <ul>
+                      <li>Dělal jsem v Power Automate dávno předtím, než lidé znali ChatGPT.</li>
+                      <li>Taskade, Make, Zapier... umím, ale na citlivá firemní data bych nasadil <strong>n8n</strong>
+                        spuštěné lokálně na serveru.</li>
+                      <li>Pracuji s <strong>Ollama</strong> nebo <strong>LM Studio</strong>. Vím, co je open-source, a
+                        umím to integrovat.</li>
+                    </ul>
+
+                    <h6 class="mt-3 fw-bold">AI Agenti:</h6>
+                    <ul>
+                      <li>Pro mě to není "buzzword", ale praktický nástroj. Dělání tabulek už dnes umím nahradit AI
+                        agenty – třeba přepisování faktur z e-mailu přímo do ERP.</li>
+                      <li>Pravidelně čtu Medium.com, sleduju GitHub (cca 120 repozitářů) a testuju nové modely.</li>
+                      <li>V minulé firmě jsem nasazoval AI copilota nad firemní dokumenty v době, kdy to bylo ještě v
+                        plenkách.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- P3 -->
+              <div class="accordion-item mb-4 border rounded shadow-sm">
+                <div class="p-4 bg-white border-bottom">
+                  <h5 class="fw-bold mb-2 text-dark">📦 3. Migrace e-shopu na Shopify & Změna WMS/ERP</h5>
+                  <p class="mb-3">Tohle umí bolet. A já vím, jak to udělat, aby to nebolelo. Mám za sebou migraci
+                    retailu s 9 pobočkami, B2B i B2C.</p>
+                  <button class="btn btn-sm btn-outline-primary rounded-pill fw-bold" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#proj3">
+                    ➕ Zobrazit detail
+                  </button>
+                </div>
+
+                <div id="proj3" class="accordion-collapse collapse" data-bs-parent="#projectsAccordion">
+                  <div class="accordion-body bg-light">
+                    <div class="alert alert-warning border-0 bg-warning-subtle mt-1">
+                      <strong>Zažil jsem migraci z Navision na Dynamics (Business Central) rozšířený o CRM.</strong>
+                      <ul class="mb-0 mt-2">
+                        <li>Rozdělili jsme centrálu, každé oddělení mělo managera pro migraci.</li>
+                        <li>Měl jsem na starosti migraci e-commerce dat, ale nakonec jsem řešil i zákazníky, sklady a
+                          testování funkcionality - pomáhal jsem vedoucímu projektu tak, že jsem byl nakonec jeho hlavní
+                          poradce.</li>
+                        <li>Upřímně? Cítím fyzickou bolest ještě teď. Ale díky tomu vím, jak drahé to může být, když se
+                          to nezvládne. Mám tu zkušenost a vím, jaká rizika eliminovat. Každá firma je jiná, ale
+                          principy "nebolestivé" migrace jsou stejné.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- P4 -->
+              <div class="accordion-item mb-4 border rounded shadow-sm">
+                <div class="p-4 bg-white border-bottom">
+                  <h5 class="fw-bold mb-2 text-dark">🔄 4. Průběžné zlepšování integrací</h5>
+                  <p class="mb-0">Nejde o hašení požárů, ale o promyšlený rozvoj. Většina firem hasí. Já chci stavět.
+                  </p>
+                </div>
+                <!-- P4 has no detail to collapse, so button is omitted -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Znalosti (Knowledge) -->
+  <section id="knowledge" class="section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <!-- Ad Side -->
+        <div class="col-lg-5 mb-4">
+          <div class="ad-box">
+            <h2>Co bys měl/a znát?</h2>
+            <p>Zkušenost s API, MSSQL, XML/CSV feedy, orientace v e-commerce ekosystému...</p>
+          </div>
+        </div>
+        <!-- Response Side -->
+        <div class="col-lg-7">
+          <div class="response-box">
+            <h2 class="response-header">Tady přichází moment, kdy je lepší dovednosti rovnou ukázat, než o nich jen
+              mluvit.</h2>
+
+            <button class="btn btn-outline-success btn-reveal rounded-pill mt-3 w-100" type="button"
+              data-bs-toggle="collapse" data-bs-target="#techDetail">
+              ➕ Zobrazit Tech Stack & Data Skills
+            </button>
+
+            <!-- This contains both the text description AND the visual Grid -->
+            <div class="collapse hidden-content" id="techDetail">
+              <!-- Text Content -->
+              <div class="mb-4">
+                <h5 class="fw-bold">Data a API:</h5>
+                <ul>
+                  <li>Umím je napojit, přečíst, obsluhovat.</li>
+                  <li><strong>MSSQL:</strong> Považuji se za datového specialistu. Data a měření jsou stavebním kamenem,
+                    zbytek jsou pocity.</li>
+                  <li>S databázemi pracuji v kódu i externě – v Excelu jsem strávil více než 600 hodin ročně
+                    (vzorcování, skripty), a to tam ještě nebylo integrované AI.</li>
+                </ul>
+
+                <h5 class="fw-bold mt-3">Feedy (XML/CSV):</h5>
+                <ul>
+                  <li>Kolik hodin jsem strávil v <strong>Mergadu</strong> nad feedy? Hodně.</li>
+                  <li>Umím vytvářet datové mosty, protože standardní XML feedy bývají často těžkopádné.</li>
+                </ul>
+
+                <h5 class="fw-bold mt-3">Programy:</h5>
+                <p>Pracoval jsem s obrovským portfoliem programů. Neříkám, že znám všechny dopodrobna zpaměti, ale
+                  znamená to, že neexistuje software, který bych si okamžitě neosvojil.</p>
+              </div>
+
+              <!-- Interactive Grid -->
+              <hr>
+              <h4 class="text-center mt-4 mb-4">Můj Tech Stack 🛠️</h4>
+              <div class="row" id="tech-stack-container">
+                <!-- JS will populate -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Profil (Candidate Profile) -->
+  <section id="profile" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <!-- Ad Side -->
+        <div class="col-lg-5 mb-4">
+          <div class="ad-box">
+            <h2>Koho hledáme?</h2>
+            <p>Člověka se zkušeností z IT, technický typ, proaktivního parťáka...</p>
+            <p>Nehledáme "korporátního seniora" nebo CTO.</p>
+          </div>
+        </div>
+        <!-- Response Side -->
+        <div class="col-lg-7">
+          <div class="response-box">
+            <h2 class="response-header">To rád slyším. Sám sebe vnímám jako "IT řemeslníka".</h2>
+            <p class="lead">Technologii beru jako řemeslo. Abyste ho ovládali, musíte mít nejen teorii, ale hlavně
+              praxi. Dneska tomu říkají "hands-on".</p>
+
+            <button class="btn btn-outline-success btn-reveal rounded-pill mt-3 w-100" type="button"
+              data-bs-toggle="collapse" data-bs-target="#philosophyDetail">
+              ➕ Moje filozofie práce
+            </button>
+
+            <div class="collapse hidden-content" id="philosophyDetail">
+              <h5 class="fw-bold">Nejsem teoretik v obleku.</h5>
+              <p>Znám korporátní zkratky (ROI, PNO, SEO) a nemám problém v nich mluvit s vedením. Ale stejně tak si
+                rozumím s "Táňou" nebo skladníkem bez slovníku.</p>
+
+              <h5 class="fw-bold mt-3">Můj přístup k inovacím:</h5>
+              <p>Technologie mají lidem práci zjednodušovat, ne přidávat. Změny dělám odspodu – poslouchám pracovníky,
+                pochopím jejich proces, najdu slabé místo a to nahradím tak, aby to sedělo uživateli, ne "ajťákovi".</p>
+
+              <h5 class="fw-bold mt-3">Loajalita:</h5>
+              <p>Nemám v plánu někam přijít a rozpoutat násilnou revoluci. Chci zapadnout jako kolečko do stroje a
+                způsobit evoluci (postupný vývoj). Jsem extrémně loajální – v minulé firmě jsem byl 10 let a důvod
+                odchodu rád vysvětlím osobně (spoiler: nebylo to ve zlém, prostě jsem vyrostl a potřeboval tým).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Závěr (Conclusion) -->
+  <section id="conclusion" class="section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 mb-4">
+          <div class="ad-box">
+            <h2>Proč právě Ovečkárna?</h2>
+            <p>Viditelný dopad práce, prostor pro inovace, flexibilita...</p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="response-box bg-white border-0 shadow">
+            <h2 class="response-header">Váš inzerát mě zastavil.</h2>
+            <p class="lead">Jsem kousek od rozhodnutí kývnout na nabídku do Brna. Náš malý, ale krásný Zlín nenabízí
+              tolik příležitostí, které by pro mně byly tou pravou výzvou. … ale nabídka od Ovečkárny by mi dala
+              příležitost pracovat na projektu, který má smysl.</p>
+
+            <button class="btn btn-outline-success btn-reveal rounded-pill mt-3 w-100" type="button"
+              data-bs-toggle="collapse" data-bs-target="#conclusionDetail">
+              ➕ Proč chci k vám a ruším svou “volnou nohu”
+            </button>
+
+            <div class="collapse hidden-content" id="conclusionDetail">
+              <p>Založení mé vlastní společnosti nebylo pod vidinou budování agentury, ale jako jediná cesta, jak udělat
+                další životní krok pro
+                získání praxe. Rok jsem s bývalým zaměstnavatelem spolupracoval externě, ale už i to muselo skončit.
+                Díky vlastní agentuře dnes vím, že <strong>nechci sedět sám v kanceláři</strong>.</p>
+              <p>Chci pracovat v týmu. Chci být samostatná jednotka a odborník, ale zároveň být součástí něčeho, co mě
+                přesahuje. Potřebuji pevné spojení s firmou (Lovebrandem), dlouhodobé vize a projekty, které budu moci
+                rozvíjet roky. A to je možné pouze jako kmenový zaměstnanec.</p>
+              <hr class="my-4">
+              <p class="fs-5 fst-italic"><strong>Vážená Táňo,</strong><br> doufám, že budete můj netradiční "průvodní
+                web" brát jako projev odhodlání a velkého nadšení. Chtěl jsem tím zaujmout, protože jsem vnitřně
+                přesvědčen, že se mnou budete spokojeni.</p>
+              <p class="fs-5">Těším se na setkání.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-dark text-white text-center">
+    <div class="container">
+      <h2 class="mb-4">Kontakt</h2>
+      <img src="images/Profil photo.jpg" class="rounded-circle mb-3"
+        style="width: 100px; height: 100px; object-fit: cover; border: 2px solid white;">
+      <p class="lead fw-bold">Martin Krajíček</p>
+      <div class="d-flex justify-content-center gap-4 flex-wrap">
+        <a href="tel:+420606150911" class="text-white text-decoration-none fs-4">📞 +420 606 150 911</a>
+        <a href="https://www.linkedin.com/in/martinkrajicek/" class="text-white text-decoration-none fs-4">💼 LinkedIn
+          Profil</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const skillsContainer = document.getElementById('full-skills-list');
+      const techStackContainer = document.getElementById('tech-stack-container');
+
+      if (!window.cvData) {
+        console.error('Data not loaded');
+        return;
+      }
+
+      // --- Render Skills ---
+      // Group skills by Category
+      const skillsByCategory = {};
+      window.cvData.skills.forEach(skill => {
+        const cat = skill['Kategorie'];
+        if (!skillsByCategory[cat]) skillsByCategory[cat] = [];
+        skillsByCategory[cat].push(skill);
+      });
+
+      // Generate HTML for Skills
+      let skillsHtml = '<div class="accordion" id="skillsAccordion">';
+      let i = 0;
+      for (const [category, items] of Object.entries(skillsByCategory)) {
+        i++;
+        skillsHtml += `
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSkill${i}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkill${i}">
+                            <strong>${category}</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseSkill${i}" class="accordion-collapse collapse" data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body">
+                            <ul class="list-group list-group-flush">
+                                ${items.map(item => `
+                                    <li class="list-group-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold">${item['Dovednost']}</span>
+                                            <span class="badge bg-secondary mb-1">${item['Úroveň']}</span>
+                                        </div>
+                                        <small class="text-muted d-block">${item['Popis dovednosti (Důkazy a úspěchy)'] || ''}</small>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+      }
+      skillsHtml += '</div>';
+      skillsContainer.innerHTML = skillsHtml;
+
+      // --- Render Tech Stack ---
+      const stackByCategory = {};
+      window.cvData.techStack.forEach(item => {
+        const cat = item['Kategorie'];
+        if (!stackByCategory[cat]) stackByCategory[cat] = [];
+        stackByCategory[cat].push(item);
+      });
+
+      let stackHtml = '';
+      for (const [category, items] of Object.entries(stackByCategory)) {
+        stackHtml += `
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-white fw-bold border-bottom-0 pt-3">${category}</div>
+                        <div class="card-body">
+                             <div class="d-flex flex-wrap gap-2">
+                                ${items.map(item => `
+                                    <span class="badge bg-light text-dark border p-2" title="${item['Popis'] || ''}">
+                                        ${item['Název']}
+                                    </span>
+                                `).join('')}
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+      }
+      techStackContainer.innerHTML = stackHtml;
+    });
+  </script>
+</body>
+
+</html>
