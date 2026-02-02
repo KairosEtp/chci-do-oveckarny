@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <title>Skill Set | Martin Krajíček</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Martin Krajíček">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        /* Navbar */
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Hero */
+        .skills-hero {
+            background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+            color: white;
+            padding: 50px 0 40px;
+        }
+
+        /* Legend (Static) */
+        .legend-section {
+            background: white;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .scale-card {
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .scale-header {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            padding: 6px 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .scale-body {
+            padding: 8px 10px;
+            font-size: 0.7rem;
+            background: white;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        /* Green Scale Colors */
+        .bg-lvl-expert {
+            background-color: #14532d;
+            color: white;
+        }
+
+        .bg-lvl-senior {
+            background-color: #166534;
+            color: white;
+        }
+
+        .bg-lvl-advanced {
+            background-color: #15803d;
+            color: white;
+        }
+
+        .bg-lvl-intermediate {
+            background-color: #22c55e;
+            color: white;
+        }
+
+        .bg-lvl-enthusiast {
+            background-color: #86efac;
+            color: #1a1a1a;
+        }
+
+        .bg-lvl-user {
+            background-color: #dcfce7;
+            color: #1a1a1a;
+        }
+
+        /* Category Selection Area */
+        .category-selection-area {
+            background: #f8f9fa;
+            padding: 20px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .cat-btn {
+            border: 2px solid #dee2e6;
+            background: white;
+            color: #495057;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 30px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cat-btn:hover {
+            background: white;
+            border-color: #198754;
+            color: #198754;
+            transform: translateY(-2px);
+        }
+
+        .cat-btn.active {
+            background: #198754;
+            color: white;
+            border-color: #198754;
+            box-shadow: 0 4px 10px rgba(25, 135, 84, 0.25);
+        }
+
+        .cat-btn.active:hover {
+            transform: none;
+        }
+
+        /* Search Area */
+        .search-area {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .search-wrapper {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            border-radius: 30px;
+            padding: 12px 20px 12px 45px;
+            font-size: 1rem;
+            background: #f1f3f5;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        .search-input:focus {
+            background: white;
+            border-color: #198754;
+            box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #adb5bd;
+            font-size: 1.1rem;
+        }
+
+        /* Main Content */
+        .category-section-title {
+            font-weight: 800;
+            color: #212529;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            margin-top: 40px;
+            display: inline-block;
+            padding-right: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 20px;
+            height: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-color: #198754;
+        }
+
+        .skill-lvl-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .skill-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #198754;
+            margin-bottom: 8px;
+        }
+
+        .skill-desc {
+            color: #555;
+            font-size: 0.9rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" tabindex="0">
+
+    <!-- Header -->
+    <header class="fixed-top bg-white border-bottom shadow-sm" style="height: 76px;">
+        <div class="container position-relative h-100 d-flex justify-content-between align-items-center">
+            <div class="logo fw-bold fs-4 d-flex align-items-center gap-2">
+                <a href="index.html" class="text-decoration-none text-dark d-flex align-items-center gap-2">
+                    <img src="images/oveckarna_logo.png" alt="Ovečkárna" height="30">
+                    <span>&times; Martin Krajíček</span>
+                </a>
+            </div>
+
+            <nav class="d-none d-md-flex position-absolute start-50 translate-middle-x">
+                <div class="d-flex bg-light rounded-pill p-1 border">
+                    <a href="index.html"
+                        class="btn btn-sm btn-link text-decoration-none text-secondary fw-medium px-3">Inzerát</a>
+                    <a href="tech-stack.html"
+                        class="btn btn-sm btn-link text-decoration-none text-secondary fw-medium px-3">Tech stack</a>
+                    <a href="skills.html"
+                        class="btn btn-sm bg-white text-dark fw-bold rounded-pill shadow-sm px-3">Skill set</a>
+                </div>
+            </nav>
+
+            <div class="d-none d-md-block" style="width: 100px;"></div>
+
+            <button class="btn btn-outline-dark d-md-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mobileMenu">☰</button>
+        </div>
+        <div class="collapse bg-white border-bottom p-3 d-md-none" id="mobileMenu">
+            <div class="d-flex gap-2">
+                <a href="index.html" class="btn btn-outline-dark flex-fill">Inzerát</a>
+                <a href="tech-stack.html" class="btn btn-outline-dark flex-fill">Tech stack</a>
+                <a href="skills.html" class="btn btn-dark flex-fill">Skill set</a>
+            </div>
+        </div>
+    </header>
+
+    <div style="margin-top: 76px;"></div>
+
+    <!-- Hero -->
+    <div class="skills-hero text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-2">Skill Set</h1>
+            <p class="lead opacity-75 mb-0" style="font-size: 1.1rem;">Detailní přehled kompetencí a zkušeností</p>
+        </div>
+    </div>
+
+    <!-- Intro Scale (Static) -->
+    <div class="legend-section py-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <small class="text-uppercase fw-bold text-muted spacing-1"><i class="bi bi-info-circle"></i> Vysvětlivky
+                    úrovní (Barevná škála)</small>
+            </div>
+            <div class="row g-2 text-start" id="legendContainer">
+                <!-- JS Populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Selection Area (Selection) -->
+    <div class="category-selection-area">
+        <div class="container">
+            <div class="d-flex flex-wrap gap-2 justify-content-center" id="catFilters">
+                <!-- JS Populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Area (Level Below) -->
+    <div class="search-area">
+        <div class="container">
+            <div class="search-wrapper">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" id="searchInput" class="search-input"
+                    placeholder="Rychlé fulltextové hledání (prohledává všechna slova, názvy i popisy)...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Areas (Grouped) -->
+    <div class="container mb-5 pb-5" id="mainContent">
+        <!-- JS Populated Sections -->
+        <div class="text-center py-5 text-muted" id="loading">Načítání dat...</div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">Martin Krajíček &copy; 2026</p>
+        </div>
+    </footer>
+
+    <!-- Detail Modal -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+                <div class="modal-header border-0 pb-0">
+                    <span class="badge bg-light text-dark border" id="modalCategory"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body pt-2 pb-4 px-4">
+                    <h2 class="fw-bold mb-3 text-success" id="modalTitle"></h2>
+                    <div class="mb-4">
+                        <span id="modalLevelBadge"
+                            class="d-inline-block px-2 py-1 rounded text-white small fw-bold"></span>
+                    </div>
+                    <p class="lead" id="modalDesc" style="font-size: 1.1rem; line-height: 1.6;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!window.cvData) {
+                document.getElementById('loading').textContent = 'Chyba načítání dat.';
+                return;
+            }
+
+            const skills = window.cvData.skillsRefined;
+            const levels = [...window.cvData.skillLevels];
+
+            // Ensure Uživatel -> Expert visual order (Left to Right) for Legend
+            if (levels[0]['Název Úrovně'] === 'Expert') levels.reverse();
+
+            const LEVEL_CONFIG = {
+                'Expert': { class: 'bg-lvl-expert', badgeBg: '#14532d' },
+                'Senior': { class: 'bg-lvl-senior', badgeBg: '#166534' },
+                'Pokročilý': { class: 'bg-lvl-advanced', badgeBg: '#15803d' },
+                'Střední': { class: 'bg-lvl-intermediate', badgeBg: '#22c55e' },
+                'Nadšenec': { class: 'bg-lvl-enthusiast', badgeBg: '#86efac', text: 'dark' },
+                'Uživatel': { class: 'bg-lvl-user', badgeBg: '#dcfce7', text: 'dark' }
+            };
+
+            // 1. Render Legend
+            const legendHTML = levels.map(l => {
+                const name = l['Název Úrovně'];
+                const conf = LEVEL_CONFIG[name] || {};
+                const textColor = conf.text === 'dark' ? 'text-dark' : 'text-white';
+                return `
+             <div class="col-6 col-md-4 col-lg-2">
+                <div class="scale-card">
+                    <div class="scale-header ${conf.class} ${textColor}">${name}</div>
+                    <div class="scale-body">${l['Vysvětlení (v kontextu skill setu)']}</div>
+                </div>
+             </div>`;
+            }).join('');
+            document.getElementById('legendContainer').innerHTML = legendHTML;
+
+            // 2. Render Categories (Buttons Grid)
+            const categories = [...new Set(skills.map(s => s['Kategorie']))];
+            const catFilters = document.getElementById('catFilters');
+
+            // Add "All" button first
+            const allBtn = document.createElement('button');
+            allBtn.className = 'cat-btn active';
+            allBtn.textContent = 'Všechny kategorie';
+            allBtn.onclick = (e) => setCategory('all', e.target.closest('.cat-btn'));
+            catFilters.appendChild(allBtn);
+
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'cat-btn';
+                btn.textContent = cat.replace(/^\d+\.\s*/, '');
+                btn.onclick = (e) => setCategory(cat, e.target.closest('.cat-btn'));
+                catFilters.appendChild(btn);
+            });
+
+            // 3. Main Render Logic
+            let activeCat = 'all';
+            let searchQuery = '';
+
+            window.setCategory = (cat, btn) => {
+                activeCat = cat;
+                document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+                if (btn) btn.classList.add('active');
+                renderMain();
+            };
+
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value; // Keep case for now, processed in render
+                renderMain();
+            });
+
+            function renderMain() {
+                const container = document.getElementById('mainContent');
+                container.innerHTML = '';
+
+                const catsToRender = activeCat === 'all' ? categories : [activeCat];
+                let hasResult = false;
+
+                // Search Tokens (AND logic)
+                const queryTokens = searchQuery.trim().toLowerCase().split(/\s+/).filter(t => t.length > 0);
+
+                catsToRender.forEach(cat => {
+                    // Filter skills
+                    const catSkills = skills.filter(s => {
+                        if (s['Kategorie'] !== cat) return false;
+                        if (queryTokens.length === 0) return true;
+
+                        // Fulltext check (Title or Desc or Category or Level must contain ALL tokens)
+                        const searchCorpus = (
+                            s['Dovednost'] + ' ' +
+                            s['Popis dovednosti (Důkazy a úspěchy)'] + ' ' +
+                            s['Kategorie'] + ' ' +
+                            s['Úroveň']
+                        ).toLowerCase();
+
+                        return queryTokens.every(token => searchCorpus.includes(token));
+                    });
+
+                    if (catSkills.length === 0) return;
+                    hasResult = true;
+
+                    // Sort by Level Prio
+                    const levelOrder = ['Expert', 'Senior', 'Pokročilý', 'Střední', 'Nadšenec', 'Uživatel'];
+                    catSkills.sort((a, b) => levelOrder.indexOf(a['Úroveň']) - levelOrder.indexOf(b['Úroveň']));
+
+                    // Create Section
+                    const cleanTitle = cat.replace(/^\d+\.\s*/, '');
+                    const section = document.createElement('section');
+                    section.className = 'animate-fade';
+                    section.innerHTML = `
+                    <h3 class="category-section-title">${cleanTitle} <small class="text-muted fw-light fs-6 ms-2">(${catSkills.length})</small></h3>
+                    <div class="row g-4">
+                        ${catSkills.map(item => {
+                        const lvl = item['Úroveň'];
+                        const conf = LEVEL_CONFIG[lvl] || {};
+                        const textColor = conf.text === 'dark' ? 'color:#1a1a1a' : 'color:white';
+                        const itemJson = JSON.stringify(item).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+
+                        return `
+                            <div class="col-md-6 col-lg-4">
+                                <div class="skill-card" onclick='openModal(${itemJson})'>
+                                    <span class="skill-lvl-badge shadow-sm" style="background:${conf.badgeBg}; ${textColor}">${lvl}</span>
+                                    <h4 class="skill-title">${item['Dovednost']}</h4>
+                                    <p class="skill-desc">${item['Popis dovednosti (Důkazy a úspěchy)']}</p>
+                                </div>
+                            </div>`;
+                    }).join('')}
+                    </div>
+                `;
+                    container.appendChild(section);
+                });
+
+                if (!hasResult) {
+                    container.innerHTML = `
+                    <div class="text-center py-5">
+                        <i class="bi bi-search display-3 text-muted opacity-25 mb-3"></i>
+                        <h4 class="text-muted">Žádné dovednosti neodpovídají hledání "${searchQuery}".</h4>
+                        <p class="text-muted small">Zkuste zadat méně slov nebo jiné klíčové slovo.</p>
+                    </div>`;
+                }
+            }
+
+            // Modal
+            const modal = new bootstrap.Modal(document.getElementById('detailModal'));
+            window.openModal = (item) => {
+                document.getElementById('modalTitle').textContent = item['Dovednost'];
+                document.getElementById('modalCategory').textContent = item['Kategorie'].replace(/^\d+\.\s*/, '');
+                document.getElementById('modalDesc').textContent = item['Popis dovednosti (Důkazy a úspěchy)'];
+
+                const badge = document.getElementById('modalLevelBadge');
+                const conf = LEVEL_CONFIG[item['Úroveň']] || { badgeBg: '#ccc' };
+                badge.textContent = item['Úroveň'];
+                badge.style.backgroundColor = conf.badgeBg;
+                badge.style.color = conf.text === 'dark' ? '#1a1a1a' : 'white';
+
+                modal.show();
+            };
+
+            // Initial Render
+            renderMain();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <title>Tech Stack | Martin Krajíček</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Martin Krajíček">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Hero for Tech Stack */
+        .tech-hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 0 60px;
+            margin-bottom: 40px;
+        }
+
+        /* Cards */
+        .tech-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            background: white;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-header {
+            padding: 20px;
+            /* background-color set dynamically via JS based on category */
+            color: white;
+            font-weight: bold;
+        }
+
+        .tech-body {
+            padding: 20px;
+        }
+
+        .tech-footer {
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .category-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Category Colors classes */
+        .cat-ecommerce {
+            background: linear-gradient(45deg, #1abc9c, #16a085);
+        }
+
+        .cat-erp {
+            background: linear-gradient(45deg, #2980b9, #2c3e50);
+        }
+
+        .cat-care {
+            background: linear-gradient(45deg, #e67e22, #d35400);
+        }
+
+        .cat-data {
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+        }
+
+        .cat-ai {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+
+        .cat-auto {
+            background: linear-gradient(45deg, #f1c40f, #f39c12);
+            color: #333 !important;
+        }
+
+        .cat-dev {
+            background: linear-gradient(45deg, #34495e, #2c3e50);
+        }
+
+        .cat-prod {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+        }
+
+        .cat-design {
+            background: linear-gradient(45deg, #ff9ff3, #f368e0);
+        }
+
+        .cat-default {
+            background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn {
+            margin: 2px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+    <!-- Header -->
+    <header class="fixed-top bg-white border-bottom shadow-sm">
+        <div class="container position-relative d-flex justify-content-between align-items-center py-3">
+            <div class="logo fw-bold fs-4 d-flex align-items-center gap-2">
+                <a href="index.html" class="text-decoration-none text-dark d-flex align-items-center gap-2">
+                    <img src="images/oveckarna_logo.png" alt="Ovečkárna" height="30">
+                    <span>&times; Martin Krajíček</span>
+                </a>
+            </div>
+
+            <nav class="d-none d-md-flex position-absolute start-50 translate-middle-x">
+                <div class="d-flex bg-light rounded-pill p-1 border">
+                    <a href="index.html"
+                        class="btn btn-sm btn-link text-decoration-none text-secondary fw-medium px-3">Inzerát</a>
+                    <a href="tech-stack.html"
+                        class="btn btn-sm bg-white text-dark fw-bold rounded-pill shadow-sm px-3">Tech stack</a>
+                    <a href="skills.html"
+                        class="btn btn-sm btn-link text-decoration-none text-secondary fw-medium px-3">Skill set</a>
+                </div>
+            </nav>
+
+            <!-- Placeholder for right side alignment if needed, or just keep spacing -->
+            <div class="d-none d-md-block" style="width: 100px;"></div>
+
+            <!-- Mobile Menu -->
+            <button class="btn btn-outline-dark d-md-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mobileMenu">☰</button>
+        </div>
+        <div class="collapse bg-white border-bottom p-3 d-md-none" id="mobileMenu">
+            <div class="d-flex gap-2 mb-3 pb-3 border-bottom overflow-x-auto">
+                <a href="index.html" class="btn btn-outline-dark flex-fill">Inzerát</a>
+                <a href="tech-stack.html" class="btn btn-dark flex-fill">Tech stack</a>
+                <a href="skills.html" class="btn btn-outline-dark flex-fill">Skill set</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="tech-hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Můj Tech Stack</h1>
+            <p class="lead text-light opacity-75">Nástroje a technologie, které bezpečně ovládám na profesionální
+                úrovni.</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <!-- Sidebar Filters (Desktop) / Top Dropdown (Mobile) -->
+            <div class="col-lg-3 mb-4">
+                <div class="sticky-nav">
+                    <h6 class="text-uppercase fw-bold text-muted mb-3 ps-2">Kategorie</h6>
+                    <div id="filter-container" class="d-flex flex-wrap flex-lg-column gap-2">
+                        <button class="btn btn-sm btn-dark text-start w-100 active"
+                            onclick="filterTech('all')">Všechno</button>
+                        <!-- JS will populate categories -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="col-lg-9">
+                <div class="row g-4" id="tech-grid">
+                    <!-- JS populate -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">Martin Krajíček &copy; 2026</p>
+            <small class="text-white-50">Vytvořeno jako součást odpovědi na inzerát pro Ovečkárnu 🐑</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('tech-grid');
+            const filterContainer = document.getElementById('filter-container');
+
+            if (!window.cvData || !window.cvData.techStackRefined) {
+                console.error('Data not loaded');
+                return;
+            }
+
+            const data = window.cvData.techStackRefined;
+
+            // 1. Extract Categories
+            const categories = [...new Set(data.map(item => item['Kategorie']))];
+
+            // 2. Generate Filters
+            categories.forEach(cat => {
+                const safeCat = cat.replace(/[^a-zA-Z0-9]/g, '');
+                const btn = document.createElement('button');
+                btn.className = `btn btn-sm btn-outline-secondary text-start w-100 mb-1`;
+                btn.textContent = cat;
+                btn.onclick = () => {
+                    document.querySelectorAll('#filter-container button').forEach(b => {
+                        b.classList.remove('btn-dark', 'text-white');
+                        b.classList.add('btn-outline-secondary');
+                    });
+                    btn.classList.remove('btn-outline-secondary');
+                    btn.classList.add('btn-dark');
+                    filterTech(cat);
+                };
+                filterContainer.appendChild(btn);
+            });
+
+            // 3. Render Cards
+            // Helper for colors
+            const getCatClass = (cat) => {
+                if (cat.includes('E-commerce')) return 'cat-ecommerce';
+                if (cat.includes('ERP')) return 'cat-erp';
+                if (cat.includes('Péče') || cat.includes('Care')) return 'cat-care';
+                if (cat.includes('Data')) return 'cat-data';
+                if (cat.includes('AI')) return 'cat-ai';
+                if (cat.includes('Automatizace')) return 'cat-auto';
+                if (cat.includes('Vývoj')) return 'cat-dev';
+                if (cat.includes('Produktivita')) return 'cat-prod';
+                if (cat.includes('Design')) return 'cat-design';
+                return 'cat-default';
+            };
+
+            const renderGrid = (filter = 'all') => {
+                grid.innerHTML = '';
+
+                data.forEach(item => {
+                    if (filter !== 'all' && item['Kategorie'] !== filter) return;
+
+                    const col = document.createElement('div');
+                    col.className = 'col-md-6 col-xl-4 animate-fade';
+
+                    col.innerHTML = `
+                    <div class="tech-card shadow-sm h-100 d-flex flex-column">
+                        <div class="tech-header ${getCatClass(item['Kategorie'])}">
+                            <span class="category-badge">${item['Kategorie']}</span>
+                            <div class="fs-5">${item['Název']}</div>
+                        </div>
+                        <div class="tech-body flex-grow-1">
+                            <p class="card-text">${item['Popis']}</p>
+                        </div>
+                        <div class="tech-footer">
+                            <strong>🛠️ K čemu používám:</strong><br>
+                            <span class="text-secondary small">${item['K použití na'] || 'N/A'}</span>
+                        </div>
+                    </div>
+                `;
+                    grid.appendChild(col);
+                });
+            };
+
+            // Expose filter function globally
+            window.filterTech = renderGrid;
+
+            // Initial Render
+            renderGrid();
+        });
+    </script>
+</body>
+
+</html>

@@ -116,23 +116,43 @@
 
   <!-- Header -->
   <header class="fixed-top bg-white border-bottom shadow-sm">
-    <div class="container d-flex justify-content-between align-items-center py-3">
+    <div class="container position-relative d-flex justify-content-between align-items-center py-3">
       <div class="logo fw-bold fs-4 d-flex align-items-center gap-2">
-        <img src="images/oveckarna_logo.png" alt="Ovečkárna" height="30">
-        <span>&times; Martin Krajíček</span>
+        <a href="index.html" class="text-decoration-none text-dark d-flex align-items-center gap-2">
+          <img src="images/oveckarna_logo.png" alt="Ovečkárna" height="30">
+          <span>&times; Martin Krajíček</span>
+        </a>
       </div>
-      <nav class="d-none d-md-flex gap-3">
+
+      <nav class="d-none d-md-flex position-absolute start-50 translate-middle-x">
+        <div class="d-flex bg-light rounded-pill p-1 border">
+          <a href="index.html" class="btn btn-sm bg-white text-dark fw-bold rounded-pill shadow-sm px-3">Inzerát</a>
+          <a href="tech-stack.html" class="btn btn-sm btn-link text-decoration-none text-secondary fw-medium px-3">Tech
+            stack</a>
+          <a href="skills.html" class="btn btn-sm btn-link text-decoration-none text-secondary fw-medium px-3">Skill
+            set</a>
+        </div>
+      </nav>
+
+      <nav class="d-none d-md-flex align-items-center gap-3">
+        <div class="border-start mx-2 h-50"></div>
         <a href="#mission" class="btn btn-link text-decoration-none text-dark fw-medium">Poslání</a>
         <a href="#projects" class="btn btn-link text-decoration-none text-dark fw-medium">Projekty</a>
         <a href="#knowledge" class="btn btn-link text-decoration-none text-dark fw-medium">Znalosti</a>
         <a href="#profile" class="btn btn-link text-decoration-none text-dark fw-medium">Profil</a>
         <a href="#contact" class="btn btn-outline-success rounded-pill px-4 fw-bold">Kontakt</a>
       </nav>
+
       <!-- Mobile Menu Toggle (simplified) -->
       <button class="btn btn-outline-dark d-md-none" type="button" data-bs-toggle="collapse"
         data-bs-target="#mobileMenu">☰</button>
     </div>
     <div class="collapse bg-white border-bottom p-3 d-md-none" id="mobileMenu">
+      <div class="d-flex gap-2 mb-3 pb-3 border-bottom overflow-x-auto">
+        <a href="index.html" class="btn btn-dark flex-fill">Inzerát</a>
+        <a href="tech-stack.html" class="btn btn-outline-dark flex-fill">Tech stack</a>
+        <a href="skills.html" class="btn btn-outline-dark flex-fill">Skill set</a>
+      </div>
       <a href="#mission" class="d-block py-2 text-decoration-none text-dark">Poslání</a>
       <a href="#projects" class="d-block py-2 text-decoration-none text-dark">Projekty</a>
       <a href="#knowledge" class="d-block py-2 text-decoration-none text-dark">Znalosti</a>
@@ -232,7 +252,7 @@
                   rozměrů spočítá střechu do posledního šroubku (400+ sestav). Tehdy nebylo AI, musel jsem vymyslet
                   logiku a navzorcovat to.</li>
                 <li class="mb-3"><strong>🏗️ Rozšíření a nástavby:</strong> Dalším revolučním projektem byl ColMACHR
-                  (coleman.cz/colmachr) který změnil přístup řemeslníků k rozpočtování a vůběc řízení celé společnosti.
+                  (coleman.cz/colmachr) který změnil přístup řemeslníků k rozpočtování a vůbec řízení celé společnosti.
                 </li>
                 <li class="mb-3"><strong>🧩 Komplexita:</strong> Vybudoval jsem to oddělení krok za krokem. Když jsem
                   odcházel, musel jsem rok externě zaškolovat kolegu, protože jsem byl jediný, kdo znal ten systém "pod
@@ -533,7 +553,7 @@
           <div class="response-box bg-white border-0 shadow">
             <h2 class="response-header">Váš inzerát mě zastavil.</h2>
             <p class="lead">Jsem kousek od rozhodnutí kývnout na nabídku do Brna. Náš malý, ale krásný Zlín nenabízí
-              tolik příležitostí, které by pro mně byly tou pravou výzvou. … ale nabídka od Ovečkárny by mi dala
+              tolik příležitostí, které by pro mě byly tou pravou výzvou. … ale nabídka od Ovečkárny by mi dala
               příležitost pracovat na projektu, který má smysl.</p>
 
             <button class="btn btn-outline-success btn-reveal rounded-pill mt-3 w-100" type="button"
