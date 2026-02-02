@@ -68,9 +68,9 @@ window.cvData = {
     },
     {
       "Kategorie": "3. ERP, WMS & Podnikové systémy",
-      "Dovednost": "Znalost trhu ERP (Pohoda, K2, ABRA...)",
-      "Úroveň": "Pokročilý",
-      "Popis dovednosti (Důkazy a úspěchy)": "Mám přehled o funkcionalitách většiny českých ERP systémů (Pohoda, Odoo, ABRA), což mi umožňuje rychle pochopit specifika jakékoli integrace."
+      "Dovednost": "Znalost trhu ERP",
+      "Úroveň": "Expert",
+      "Popis dovednosti (Důkazy a úspěchy)": "Mám přehled o funkcionalitách většiny ERP systémů používaných v česku (Pohoda, K2, ABRA), ale také těch, co dominují v zahraničí (MS Dynamics, SAP, Odoo) a to mi umožňuje rychle pochopit specifika jakékoli integrace."
     },
     {
       "Kategorie": "3. ERP, WMS & Podnikové systémy",
@@ -1153,9 +1153,15 @@ window.cvData = {
     },
     {
       "Kategorie": "4. Data, SQL & Reporting",
-      "Dovednost": "Pokročilá práce s Excelem (Google sheets)",
+      "Dovednost": "Pokročilá práce s Excelem",
       "Úroveň": "Expert",
       "Popis dovednosti (Důkazy a úspěchy)": "Mám stovky hodin praxe v Excelu. Dokážu zpracovat obrovské datové sety, čistit data před importem a tvořit složité analytické modely."
+    },
+    {
+      "Kategorie": "4. Data, SQL & Reporting",
+      "Dovednost": "Google Sheets specialista",
+      "Úroveň": "Expert",
+      "Popis dovednosti (Důkazy a úspěchy)": "Umím listy používat jako databáze a stavit nad nimi scripty tak, abych docílil plně funkčních automatizačních aplikací. Super například pro správu feedů či práci se zákaznickými daty."
     },
     {
       "Kategorie": "4. Data, SQL & Reporting",
@@ -1179,7 +1185,7 @@ window.cvData = {
       "Kategorie": "5. AI, Automatizace & Inovace",
       "Dovednost": "Tvorba AI Agentů",
       "Úroveň": "Pokročilý",
-      "Popis dovednosti (Důkazy a úspěchy)": "Aktivně vytvářím AI agenty (lokální i cloudové) pro automatizaci rutinních úkolů. Využívám nástroje jako Google Vertex AI či OpenAI API."
+      "Popis dovednosti (Důkazy a úspěchy)": "Aktivně vytvářím AI agenty (lokální i cloudové) pro automatizaci rutinních úkolů. Nejraději využívám nástroje Google Vertex AI, ale Azure nebo Copilot studio je podobné. Pro vlastní řešení umím použít open-source model a hostovat jako aplikaci"
     },
     {
       "Kategorie": "5. AI, Automatizace & Inovace",
@@ -1197,7 +1203,7 @@ window.cvData = {
       "Kategorie": "5. AI, Automatizace & Inovace",
       "Dovednost": "Sledování technologických trendů",
       "Úroveň": "Nadšenec",
-      "Popis dovednosti (Důkazy a úspěchy)": "Denně sleduji novinky (Medium, GitHub), testuji nové nástroje a okamžitě vyhodnocuji jejich přínos pro firmu (např. Luigi’s Box, AI search)."
+      "Popis dovednosti (Důkazy a úspěchy)": "Denně sleduji novinky (Medium, GitHub), testuji nové nástroje a okamžitě vyhodnocuji jejich přínos pro firmu v praktických skutečných operacích."
     },
     {
       "Kategorie": "6. API, Integrace & Vývoj",
@@ -1221,7 +1227,7 @@ window.cvData = {
       "Kategorie": "6. API, Integrace & Vývoj",
       "Dovednost": "Verzování a repozitáře (GitHub)",
       "Úroveň": "Uživatel",
-      "Popis dovednosti (Důkazy a úspěchy)": "Mám na GitHubu přes 120 repozitářů s vlastními pokusy a nástroji. Chápu principy verzování a spolupráce na kódu."
+      "Popis dovednosti (Důkazy a úspěchy)": "Mám na GitHubu přes 150 repozitářů s vlastními pokusy a nástroji. Chápu principy verzování a spolupráce na kódu."
     },
     {
       "Kategorie": "6. API, Integrace & Vývoj",
@@ -1233,7 +1239,7 @@ window.cvData = {
       "Kategorie": "7. Produktový management",
       "Dovednost": "Projektové řízení vývoje aplikací",
       "Úroveň": "Expert",
-      "Popis dovednosti (Důkazy a úspěchy)": "Navrhl jsem a řídil vývoj unikátního konfigurátoru střech („Booking pro střechy“). Vymyslel jsem logiku výpočtu spotřeby materiálu „do posledního šroubku“."
+      "Popis dovednosti (Důkazy a úspěchy)": "Navrhl jsem a řídil vývoj unikátního konfigurátoru střech („Booking pro střechy“). Vymyslel jsem logiku výpočtu spotřeby materiálu „do posledního šroubku“ v době, kdy ještě neexistovalo AI."
     },
     {
       "Kategorie": "7. Produktový management",
@@ -1245,13 +1251,13 @@ window.cvData = {
       "Kategorie": "7. Produktový management",
       "Dovednost": "Prototypování a MVP",
       "Úroveň": "Pokročilý",
-      "Popis dovednosti (Důkazy a úspěchy)": "Nečekám na dokonalost. Dokážu navrhnout a spustit MVP (Minimum Viable Product), ověřit ho na trhu a následně ladit na základě dat."
+      "Popis dovednosti (Důkazy a úspěchy)": "Nečekám na dokonalost. Dokážu navrhnout a spustit MVP (Minimum Viable Product), ověřit ho na trhu a následně ladit na základě dat. Dotáhnout ho k dokonalosti už je jen otázkou termínu a zdrojů"
     },
     {
       "Kategorie": "7. Produktový management",
       "Dovednost": "Analýza konkurence",
       "Úroveň": "Senior",
-      "Popis dovednosti (Důkazy a úspěchy)": "Pravidelně monitoruji trh a konkurenci (Czech Online Expo, analýza webů), abychom byli technologicky o krok napřed."
+      "Popis dovednosti (Důkazy a úspěchy)": "Pravidelně monitoruji trh a konkurenci (Czech Online Expo, analýza webů, zprávy), abychom byli technologicky o krok napřed."
     },
     {
       "Kategorie": "8. Leadership & Soft Skills",
@@ -1305,7 +1311,7 @@ window.cvData = {
       "Kategorie": "9. Marketing & Analytika",
       "Dovednost": "Personalizace a doporučování",
       "Úroveň": "Pokročilý",
-      "Popis dovednosti (Důkazy a úspěchy)": "Rozumím principům nástrojů jako Luigi’s Box. Vím, jak nastavit vyhledávání a doporučování produktů pro zvýšení průměrné objednávky."
+      "Popis dovednosti (Důkazy a úspěchy)": "Rozumím principům nástrojů jako třeba Luigi’s Box. Vím, jak nastavit doporučování produktů pro zvýšení průměrné objednávky a jak to měřit."
     },
     {
       "Kategorie": "9. Marketing & Analytika",
